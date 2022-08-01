@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 .idea
 
-my_data.txt
+static/my_data.txt
 data.xlsx
-
+static
