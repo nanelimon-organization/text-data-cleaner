@@ -1,0 +1,30 @@
+{% extends "layout.html"  %}
+{% block body %}
+    <section class="bg-light mt-5">
+    <div class="container"></div>
+     <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+       <div class="form-wrapper py-5">
+         <form action="/" class="dropzone" id="my-dropzone" method="POST">
+           <div class="form-group">
+             <button class="btn btn-success" type="submit"><i class="fa-solid fa-file-arrow-up"></i> Yükle</button>
+               <a href="/data_cleaning" class="btn btn-secondary" type="submit"><i class="fa-solid fa-soap"></i> Temizle & İndir</a>
+               <input type="text" name="myFormData" id="myFormData" placeholder="Enter your data" class="form-control" style="visibility: hidden" required/>
+           </div>
+         </form>
+        </div>
+       </div>
+      </div>
+  </section>
+
+{% endblock %}
+
+{% block javascript_block %}
+
+
+{% endblock %}
+
+
+
+
+
