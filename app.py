@@ -80,7 +80,6 @@ def upload_file():
 def data_cleaning():
     try:
         df = pd.read_excel('static/data.xlsx')
-
         textList = df.text.apply(cleaning)
         textList = list(textList)
 

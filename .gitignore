@@ -129,7 +129,3 @@ dmypy.json
 .pyre/
 .idea
 
-static/clean_data.csv
-static/data.xlsx
-static/data2.xlsx
-static/my_data.txt
