@@ -20,7 +20,7 @@ app = Flask(__name__)
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 app.config['UPLOAD_EXTENSIONS'] = ['.xlsx']
-app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 2048 * 2048
 app.config.update(
     UPLOADED_PATH=os.path.join(dir_path, 'static/'),
     DROPZONE_MAX_FILES=1
