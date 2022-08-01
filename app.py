@@ -46,7 +46,7 @@ def cleaning(text):
 
 @app.errorhandler(413)
 def too_large(e):
-    return "Dosya boyutu 1GB tan fazla!", 413
+    return "Dosya boyutu 1GB tan fazla!", e, 413
 
 
 @app.route('/')
@@ -91,4 +91,3 @@ def data_cleaning():
         print('Alınan data temizlenirken bir hata oluştu', e)
     else:
         return send_file('static/clean_data.csv', as_attachment=True)
-
