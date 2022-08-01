@@ -79,7 +79,7 @@ def upload_file():
 @app.route('/data_cleaning')
 def data_cleaning():
     try:
-        df = pd.read_excel('static/data2.xlsx')
+        df = pd.read_excel('static/data.xlsx')
 
         textList = df.text.apply(cleaning)
         textList = list(textList)
