@@ -40,8 +40,13 @@ def cleaning(text):
     text = text.lower()
     text = " ".join([word for word in text.split() if '#' not in word and '@' not in word])
     text = re.sub(r"(\w+:\/\/\S+)|^rt|http.+?", " ", text)
-    translator = str.maketrans(' ', ' ', string.punctuation)
-    text = text.translate(translator)
+    text = re.sub(r'''      
+                   \W+       # Bir veya daha fazla sözcük olmayan karakter
+                   \s*       # artı sıfır veya daha fazla boşluk karakteri,
+                   ''',
+                   ' ',
+                   text,
+                   flags=re.VERBOSE)
     text = re.sub("\d+", "", text)
     return text
 
