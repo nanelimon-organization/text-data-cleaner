@@ -37,7 +37,7 @@ def stop_word(text):
 
 
 def cleaning(text):
-    text = text.lower()
+    text = str(text).lower()
     text = " ".join([word for word in text.split() if '#' not in word and '@' not in word])
     text = re.sub(r"(\w+:\/\/\S+)|^rt|http.+?", " ", text)
     text = re.sub(r'''      
