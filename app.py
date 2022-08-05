@@ -91,7 +91,7 @@ def data_cleaning():
         textList = list(textList)
 
         df['clean_data'] = textList
-        df.to_csv('static/clean_data.csv')
+        df.to_csv('static/clean_data.csv', index=False)
 
     except Exception as e:
         print('Alınan data temizlenirken bir hata oluştu', e)
