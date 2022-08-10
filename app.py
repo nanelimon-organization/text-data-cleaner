@@ -34,10 +34,16 @@ def stop_word(text):
     return text
 
 
+def turkish_char(text):
+    translationTable = str.maketrans("ğĞıİöÖüÜşŞçÇ", "gGiIoOuUsScC")
+    result = text.translate(translationTable)
+    return result
+
+
 def cleaning(text):
     text = str(text).lower()
     text = " ".join([word for word in text.split() if '#' not in word and '@' not in word])
-    text = re.sub(r"(\w+:\/\/\S+)|^rt|http.+?", " ", text)
+    text = re.sub(r"(@\[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)|^rt|http.+?", "", text)
     text = re.sub(r'''      
                    \W+       # Bir veya daha fazla sözcük olmayan karakter
                    \s*       # artı sıfır veya daha fazla boşluk karakteri,
@@ -87,7 +93,8 @@ def upload_file():
 def data_cleaning():
     try:
         df = pd.read_excel(f"static/data.xlsx")
-        textList = df.text.apply(cleaning)
+        textList = df.text.apply(turkish_char)
+        textList = textList.apply(cleaning)
         textList = list(textList)
         df['clean_data'] = textList
         df.to_csv('static/clean_data.csv', index=False)
