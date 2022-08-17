@@ -5,10 +5,10 @@ import os
 from werkzeug.utils import secure_filename
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-from nltk import word_tokenize
+#from nltk import word_tokenize
 import nltk
 
-nltk.download('stopwords')
+#nltk.download('stopwords')
 nltk.download('punkt')
 ps = PorterStemmer()
 stopwordSet = set(stopwords.words('turkish'))
@@ -16,7 +16,6 @@ stopwordSet = set(stopwords.words('turkish'))
 app = Flask(__name__)
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-
 app.config['UPLOAD_EXTENSIONS'] = ['.xlsx', '.csv', '.xls']
 app.config['MAX_CONTENT_LENGTH'] = 2048 * 2048
 
@@ -27,11 +26,11 @@ app.config.update(
 )
 
 
-def stop_word(text):
+"""def stop_word(text):
     text = word_tokenize(text, language='turkish')
     text = [word for word in text if not word in stopwordSet]
     text = " ".join(text)
-    return text
+    return text"""
 
 
 def turkish_char(text):
