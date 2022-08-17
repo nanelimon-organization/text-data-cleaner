@@ -12,7 +12,7 @@ Veri temizleme öncesi herkesçe kullanılabilecek basit bir araçtır.
 
 [araç linki](https://text-data-cleaner.herokuapp.com/)
 
-#### Aracın kullanımını anlatan video için <youtube-link>
+#### Aracın kullanımını anlatan video için <youtube-link> tıklayın.
 
 # Ortam Oluşturma
 
