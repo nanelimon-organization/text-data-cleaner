@@ -16,7 +16,7 @@ stopwordSet = set(stopwords.words('turkish'))
 app = Flask(__name__)
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-app.config['UPLOAD_EXTENSIONS'] = ['.xlsx', '.csv', '.xls']
+app.config['UPLOAD_EXTENSIONS'] = ['.xlsx']
 app.config['MAX_CONTENT_LENGTH'] = 2048 * 2048
 
 app.config.update(
