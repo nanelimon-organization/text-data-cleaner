@@ -3,15 +3,10 @@ import pandas as pd
 from flask import Flask, render_template, request, redirect, url_for, abort, send_file
 import os
 from werkzeug.utils import secure_filename
-from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-#from nltk import word_tokenize
-import nltk
 
-#nltk.download('stopwords')
-nltk.download('punkt')
 ps = PorterStemmer()
-stopwordSet = set(stopwords.words('turkish'))
+
 
 app = Flask(__name__)
 
@@ -24,13 +19,6 @@ app.config.update(
     DROPZONE_MAX_FILES=1,
     DROPZONE_DEFAULT_MESSAGE='Dosyaları yüklemek için buraya bırakınız..'
 )
-
-
-"""def stop_word(text):
-    text = word_tokenize(text, language='turkish')
-    text = [word for word in text if not word in stopwordSet]
-    text = " ".join(text)
-    return text"""
 
 
 def turkish_char(text):
